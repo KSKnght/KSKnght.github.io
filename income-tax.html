@@ -93,28 +93,28 @@
 
                 income = document.getElementById("income").value*1;
 
-                if (income < 250000) {
-                    document.getElementById("tax").innerHTML = 'Tax: P0';
+                if (income <= 250000) {
+                    document.getElementById("tax").innerHTML = 'Tax: P0.00';
                 }
-                else if (250000 <= income && income < 400000) {
-                    var x = income * 0.2;
-                    document.getElementById("tax").innerHTML = 'Tax: P' +x;
+                else if (250000 < income && income <= 400000) {
+                    var x = (income - 250000) * 0.2;
+                    document.getElementById("tax").innerHTML = 'Tax: P' +x+ '.00';
                 }
-                else if (400000 <= income && income < 800000) {
-                    var x = (income * 0.25) + 30000;
-                    document.getElementById("tax").innerHTML = 'Tax: P' +x;
+                else if (400000 < income && income <= 800000) {
+                    var x = ((income - 400000) * 0.25) + 30000;
+                    document.getElementById("tax").innerHTML = 'Tax: P' +x+ '.00';
                 }
-                else if (800000 <= income && income < 2000000) {
-                    var x = (income * 0.3) + 130000;
-                    document.getElementById("tax").innerHTML = 'Tax: P' +x;
+                else if (800000 < income && income <= 2000000) {
+                    var x = ((income - 800000) * 0.3) + 130000;
+                    document.getElementById("tax").innerHTML = 'Tax: P' +x+ '.00';
                 }
-                else if (2000000 <= income && income < 8000000) {
-                    var x = (income * 0.32) + 490000;
-                    document.getElementById("tax").innerHTML = 'Tax: P' +x;
+                else if (2000000 < income && income <= 8000000) {
+                    var x = ((income - 2000000) * 0.32) + 490000;
+                    document.getElementById("tax").innerHTML = 'Tax: P' +x+ '.00';
                 }
-                else if (8000000 <= income) {
-                    var x = (income * 0.35) + 2410000;
-                    document.getElementById("tax").innerHTML = 'Tax: P' +x;
+                else if (8000000 < income) {
+                    var x = ((income - 8000000) * 0.35) + 2410000;
+                    document.getElementById("tax").innerHTML = 'Tax: P' +x+ '.00';
                 }
             document.getElementById("endli").innerHTML = 'Thank you for trying my income tax calculator! You may re-enter you new desired income to calculate'
 
