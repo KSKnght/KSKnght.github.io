@@ -1,53 +1,145 @@
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Income Tax Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #7fc994;
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 1280px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #242424;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #7fc994;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 868px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
 <body>
 
-<h1>Income Tax Calculator</h1>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><p style="color:#1c1c1c">Logo</p></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html"><p style="color:#1c1c1c">Home</p></a></li>
+        <li class="active"><a href="income-tax.html">ACT 1</a></li>
+        <li><a href="#"><p style="color:#1c1c1c">Projects</p></a></li>
+        <li><a href="#"><p style="color:#1c1c1c">Contact</p></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="income-tax.html">Income Tax Calculator</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div>
+    <div class="col-sm-8 text-left">
+        <h1>Income Tax Calculator</h1>
 
+        <label for="income">Input your Income here: </label>
+        <input type="text" id="income" name="income" autocomplete="off"><br><br>
 
-<label for="income">Input your Income here: </label>
-<input type="text" id="income" name="income" autocomplete="off"><br><br>
+        <input type="button" value="Submit" onclick="theTax()"><br><br>
 
-<input type="button" value="Submit" onclick="theTax()"><br><br>
+        <label for="tax" id="tax">Tax: </label>
 
-<label for="tax" id="tax">Tax: </label>
+        <p id="endli"></p>
 
-<p id="endli"></p>
+        <script>
+            function theTax() {
+                var income;
 
-<script>
-    function theTax() {
-        var income;
+                income = document.getElementById("income").value*1;
 
-        income = document.getElementById("income").value*1;
+                if (income < 250000) {
+                    document.getElementById("tax").innerHTML = 'Tax: P0';
+                }
+                else if (250000 <= income && income < 400000) {
+                    var x = income * 0.2;
+                    document.getElementById("tax").innerHTML = 'Tax: ' +x;
+                }
+                else if (400000 <= income && income < 800000) {
+                    var x = (income * 0.25) + 30000;
+                    document.getElementById("tax").innerHTML = 'Tax: ' +x;
+                }
+                else if (800000 <= income && income < 2000000) {
+                    var x = (income * 0.3) + 130000;
+                    document.getElementById("tax").innerHTML = 'Tax: ' +x;
+                }
+                else if (2000000 <= income && income < 8000000) {
+                    var x = (income * 0.32) + 490000;
+                    document.getElementById("tax").innerHTML = 'Tax: ' +x;
+                }
+                else if (8000000 <= income) {
+                    var x = (income * 0.35) + 2410000;
+                    document.getElementById("tax").innerHTML = 'Tax: ' +x;
+                }
+            document.getElementById("endli").innerHTML = 'Thank you for trying my income tax calculator! You may re-enter you new desired income to calculate'
 
-        if (income < 250000) {
-            document.getElementById("tax").innerHTML = 'Tax: P0';
         }
-        else if (250000 <= income && income < 400000) {
-            var x = income * 0.2;
-            document.getElementById("tax").innerHTML = 'Tax: ' +x;
-        }
-        else if (400000 <= income && income < 800000) {
-            var x = (income * 0.25) + 30000;
-            document.getElementById("tax").innerHTML = 'Tax: ' +x;
-        }
-        else if (800000 <= income && income < 2000000) {
-            var x = (income * 0.3) + 130000;
-            document.getElementById("tax").innerHTML = 'Tax: ' +x;
-        }
-        else if (2000000 <= income && income < 8000000) {
-            var x = (income * 0.32) + 490000;
-            document.getElementById("tax").innerHTML = 'Tax: ' +x;
-        }
-        else if (8000000 <= income) {
-            var x = (income * 0.35) + 2410000;
-            document.getElementById("tax").innerHTML = 'Tax: ' +x;
-        }
-    document.getElementById("endli").innerHTML = 'Thank you for trying my income tax calculator! You re-enter you new desired income to calculate'
 
-}
+        </script>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-</script>
+<footer class="container-fluid text-center">
+  <p>There's no text to read here.</p>
+</footer>
+
+</body>
+</html>
+
 
 
 
