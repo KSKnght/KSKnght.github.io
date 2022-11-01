@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Simple Payroll</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #7fc994;
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 1280px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #242424;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #7fc994;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 868px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><p style="color:#1c1c1c">Logo</p></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="#"><p style="color:#1c1c1c">Home</p></a></li>
+        <li><a href="income-tax.html"><p style="color:#1c1c1c">ACT 1</p></a></li>
+        <li><a href="factorial.html"><p style="color:#1c1c1c">ACT 2</p></a></li>
+        <li class="active"><a href="payroll.html">ACT 3</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="income-tax.html">Income Tax Calculator</a></p>
+      <p><a href="factorial.html">Factorial, Sum and Average</a></p>
+      <p><a href="payroll.html">Simple Payroll</a></p>
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <h1>Simple Payroll</h1>
+
+
+<label for="EName">Employee Name:</label>
+<input id="EName" name="EName" type="text"></input>
+
+<label for="Days">Days Worked:</label>
+<input id="Days" name="daysW" type="number"></input>
+
+<label for="DRate">Daily Rate:</label>
+<input id="DRate" name="Drate" type="number"></input>
+
+<label for="DAmount">Deduction Amount:</label>
+<input id="DAmount" name="Damount" type="number"></input>
+
+<button onclick="addTabRow(payroll)">Add to Roll</button><br><br>
+
+<label for="delEmployee">Enter No. to delete:</label>
+<input id="delEmployee" name="delEmployee" type="number"></type>
+<button onclick="deleteEmployee()">Delete</button><br><br>
+
+
+<table id="payroll">
+  <tr>
+    <th>No.</th>
+    <th>Employee Name</th>
+    <th>Days Worked</th>
+    <th>Daily Rate</th>
+    <th>Gross Pay</th>
+    <th>Deduction Amount</th>
+    <th>Net Pay</th>
+  </tr>
+
+
+
+
+
+</table>
+
+
+<script>
+    var no = 1;
+    
+    
+
+    function addTabRow (payroll) {
+    var tabHook = document.getElementById("payroll");
+    var newRow = tabHook.insertRow(-1);
+    newRow.id = "row" +no;
+    var noID = newRow.insertCell(0);
+    var name = newRow.insertCell(1);
+    var daysWorked = newRow.insertCell(2);
+    var rateDaily = newRow.insertCell(3);
+    var gross = newRow.insertCell(4);
+    var deduction = newRow.insertCell(5);
+    var netPay = newRow.insertCell(6);
+
+    var t = document.getElementById("Days").value*1;
+    var n = document.getElementById("DRate").value*1;
+    var g = t * n;
+    var d = document.getElementById("DAmount").value*1
+    var p = g - d;
+
+    noID.innerHTML = no;
+    name.innerHTML = document.getElementById("EName").value;
+    daysWorked.innerHTML = document.getElementById("Days").value*1;
+    rateDaily.innerHTML = document.getElementById("DRate").value*1;
+    gross.innerHTML = g;
+    deduction.innerHTML = document.getElementById("DAmount").value*1;
+    netPay.innerHTML = p;
+
+    no++;
+
+    }
+
+
+    function deleteEmployee () {
+    var delno = document.getElementById("delEmployee").value;
+    var n = "row" + delno;
+        document.getElementById(n).remove();
+        
+    }
+</script>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>There's no text to read here.</p>
+</footer>
+
+</body>
+</html> 
