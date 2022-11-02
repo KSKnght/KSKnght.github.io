@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: #7fc994;
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 1280px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #242424;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #7fc994;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 868px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><p style="color:#1c1c1c">Logo</p></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#"><p style="color:#1c1c1c">Home</p></a></li>
+        <li class="active"><a href="simple-computations.html">ACT 1</a></li>
+        <li><a href="income-tax.html"><p style="color:#1c1c1c">ACT 2</p></a></li>
+        <li><a href="factorial.html"><p style="color:#1c1c1c">ACT 3</p></a></li>
+        <li><a href="payroll.html"><p style="color:#1c1c1c">ACT 4</p></a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="income-tax.html">Income Tax Calculator</a></p>
+      <p><a href="factorial.html">Factorial, Sum and Average</a></p>
+      <p><a href="payroll.html">Simple Payroll</a></p>
+    </div>
+    <div class="col-sm-8 text-left"> 
+        <h1>Simple Computations</h1>
+
+        <label for="fahrenheit">Enter Fahrenheit temperature: </label>
+        <input id="fahrenheit" name="fahrenheit" type="number" onkeyup="fahToCel()">
+        <p id="celRes"></p><br><br>
+
+        <label for="celsius">Enter Celsius temperature: </label>
+        <input id="celsius" name="celsius" onkeyup="celToFah()">
+        <p id="fahRes"></p><br><br>
+
+        <label for="meters">Enter Meters: </label>
+        <input id="meters" name="meters" onkeyup="metToFeet()">
+        <p id="feetRes"></p><br><br>
+
+        <label for="feet">Enter Feet: </label>
+        <input id="feet" name="feet" onkeyup="feetToMet()">
+        <p id="meterRes"></p><br><br>
+
+        <script>
+            function fahToCel () {
+                var fah = document.getElementById("fahrenheit").value*1;
+                var cRes = (fah - 32) * 5 / 9;
+                document.getElementById("celRes").innerHTML = 'The result is: '+cRes.toFixed(4);
+            }
+            function celToFah () {
+                var cel = document.getElementById("celsius").value*1;
+                var fahrenheitRes = (cel * 9) / 5 + 32;
+                document.getElementById("fahRes").innerHTML = 'The result is: '+fahrenheitRes.toFixed(4);
+            }
+            function metToFeet () {
+                var met = document.getElementById("meters").value*1;
+                var fitRes = met / 3.281;
+                document.getElementById("feetRes").innerHTML = 'The result is: '+fitRes.toFixed(4);
+            }
+            function feetToMet () {
+                var feet = document.getElementById("feet").value*1;
+                var mRes = feet * 3.28084;
+                document.getElementById("meterRes").innerHTML = 'The result is: '+mRes.toFixed(4);
+            }
+        </script>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>There's no text to read here.</p>
+</footer>
+
+</body>
+</html>
+
+
