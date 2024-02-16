@@ -1,0 +1,119 @@
+@media screen and (max-width: 900px){
+    .banner-text img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 100px;
+    }
+
+    .banner img {
+        position: relative;
+        background-color: antiquewhite;
+        height: 200px;
+        /* width: 100%; */
+    }
+
+    .main-body {
+        /* background-image: url('assets/p1.png'); */
+        font-size: 300%;
+        font-weight: bold;
+        margin: auto;
+        /* grid-row-start: 2;
+        grid-row-end: 9; */
+        /* grid-column-start: 2;
+        grid-column-end: 10; */
+        height: 1200px;
+        padding-top: 130px;
+        /* margin-top: 200px; */
+        color: var(--color-accent);
+        background-color: var(--color-bg);
+        font-family: Iosevka Nerd Font;
+        font-weight: bold;
+    }
+
+    .subhead1 {
+        font-family: Iosevka Web;
+        font-size: 3rem;
+        font-weight: normal;
+        color: var(--color-text);
+    }
+
+    .para1 {
+        display: flex; 
+        flex-direction: column; 
+        font-size: 40px;
+        width: 55%;
+        text-align: center; 
+        margin: auto;
+    }
+
+    .b1 {
+        font-family: Hack;
+        text-align: center;
+        font-weight: bold;
+        font-size: 3rem;
+        color: var(--color-accent);
+        src: url(//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css);
+    }
+    
+    .b1-sub {
+        font-family: Iosevka Web;
+        font-size: 2rem;
+        text-align: center;
+        color: var(--color-text);
+    }
+
+    .paragraph-style1 {
+        font-family: Iosevka Web;
+        font-size: 20px;
+        font-weight: normal;
+        color: var(--color-text);
+    }
+
+    .def1 {
+        font-family: Iosevka Web;
+        font-size: 18px;
+        font-weight: normal;
+        color: var(--color-text);
+    }
+
+    .div3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: var(--color-bg2);
+        width: 100%;
+        height: 1000px;
+    }
+
+    .con1, .con2, .con3 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .banner-fac {
+        position: absolute; 
+        width: 100%; 
+        height: 1000px; 
+        object-fit: cover;
+    }
+
+
+    .factions1, .factions2, .factions3 {
+        position:relative;
+        top: 50%;
+        left: 50%;
+    }
+    
+    .factions1 {
+        transform: translate(-22%, -50%);
+    }
+    .factions2 {
+        transform: translate(-18%, -50%);
+    }
+    .factions3 {
+        transform: translate(-14%, -50%);
+    }
+}

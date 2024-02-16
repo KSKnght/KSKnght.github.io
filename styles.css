@@ -1,0 +1,251 @@
+html {
+    /* scale: 150%; */
+    --color-accent: #A7C080;
+    --color-bg: #1e2326;
+    --color-bg2: #272E33;
+    --color-text: #D3C6AA;
+}
+
+.mainheader {
+    background-color: #444444cf;
+    color: beige;
+    height: 50px;
+    padding: 14px;
+    display: block;
+    position: fixed;
+    width: 100%;
+}
+
+.para1 {
+    display: flex; 
+    flex-direction: column; 
+    width: 55%;
+    text-align: center;  
+    margin: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+}
+
+.logo {
+    height: 100%;
+    width: 100%;
+}
+
+.background {
+    
+    width: 100%;
+    height: 600px;
+    background-color: bisque;
+    /* display: grid; */
+    grid-template-rows: repeat(10,10%);
+    grid-template-columns: repeat(10,10%);
+}
+
+.main-body {
+    /* background-image: url('assets/p1.png'); */
+    font-size: 300%;
+    font-weight: bold;
+    margin: auto;
+    /* grid-row-start: 2;
+    grid-row-end: 9; */
+    /* grid-column-start: 2;
+    grid-column-end: 10; */
+    height: 900px;
+    padding-top: 130px;
+    /* margin-top: 200px; */
+    color: var(--color-accent);
+    background-color: var(--color-bg);
+    font-family: Iosevka Nerd Font;
+    font-weight: bold;
+}
+
+.banner img {
+    position: relative;
+    background-color: antiquewhite;
+    height: 100%;
+    width: 100%;
+}
+
+.banner video {
+    width: 100%;
+}
+
+.subhead1 {
+    font-family: Iosevka Web;
+    font-size: 4rem;;
+    font-weight: normal;
+    color: var(--color-text);
+}
+
+.b1 {
+    font-family: Hack;
+    font-weight: bold;
+    font-size: 800%;
+    color: var(--color-accent);
+    src: url(//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css);
+}
+
+.b1-sub {
+    font-family: Iosevka Web;
+    font-size: 200%;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.paragraph-style1 {
+    font-family: Iosevka Web;
+    font-size: 30px;
+    font-weight: normal;
+    color: var(--color-text);
+}
+
+.def1 {
+    font-family: Iosevka Web;
+    font-size: 25px;
+    font-weight: normal;
+    color: var(--color-text);
+}
+
+.div2 {
+    background-color: var(--color-accent);
+    width: 100%;
+    height: 10px;
+}
+
+.banner-fac {
+    background-color: black;
+    opacity: 0;
+    position: absolute; 
+    width: 33.33%; 
+    height: 1000px; 
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.div3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color-bg2);
+    width: auto;
+    height: 1000px;
+}
+
+.con1, .con2, .con3 {
+    width: 100%;
+}
+
+.fac-names {
+    visibility: hidden;
+    font-size: 2rem;
+    color: #000;
+    width: 50%;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    transition: 0.5s;
+}
+
+.con1:hover, .con2:hover, .con3:hover {
+    width: 100%;
+    .banner-fac {
+        opacity: 80%;
+        background-color: #1e2326
+    };
+    .fac-names {
+        visibility: visible;
+        opacity: 1;
+    };
+    .factions1-logo, .factions2-logo, .factions3-logo {
+        opacity: 0;
+    }
+    
+}
+
+.factions1, .factions2, .factions3, .factions1-logo, .factions2-logo, .factions3-logo {
+    opacity: 1;
+    transition: 0.5s;
+    text-align: center;
+    position: absolute;
+    top: 286%;
+}
+
+.factions1, .factions1-logo {
+    left: 12%;
+    transform: translate(-24%, -170%);
+}
+.factions2, .factions2-logo {
+    left: 46%;
+    transform: translate(-20%, -170%);
+}
+.factions3, .factions3-logo {
+    left: 80%;
+    transform: translate(-16%, -180%);
+}
+
+.con1 {
+    background-image: linear-gradient(red, rgb(234, 181, 88));
+    /* background-image: url(assets/banner2.jpg); */
+}
+.con2 {
+    background-image: linear-gradient(rgb(18, 55, 135), rgb(117, 193, 243));
+}
+.con3 {
+    background-image: linear-gradient(rgb(112, 34, 185), rgb(240, 152, 240));
+}
+
+.para2 {
+    color: #D3C6AA;
+    margin-top: 40px;
+    font-size: 4rem;
+    text-align: center;  
+}
+
+.para3 {
+    color: #A7C080;
+    margin-top: 40px;
+    font-size: 7rem;
+    font-weight: bold;
+    text-align: center;  
+}
+
+.banner-text2 {
+    position: absolute;
+    top: 448%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner-text3 {
+    position: absolute;
+    top: 506%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.banner-text4 {
+    position: absolute;
+    top: 567%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.div4 {
+    display: flex; 
+    flex-direction: row; 
+    height: 1000px; 
+    padding: 19%;
+    background-color: #1e2326;
+    margin: auto;
+}
+
+button {
+    width: 350px;
+    height: 100px;
+    background-color: #272E33;
+    border: 0px;
+}
