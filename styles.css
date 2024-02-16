@@ -207,29 +207,36 @@ html {
 }
 
 .para3 {
+    color: #1e2326;
+    margin-top: 40px;
+    font-size: 9rem;
+    font-weight: bold;
+    text-align: center;  
+}
+.para4 {
     color: #A7C080;
     margin-top: 40px;
-    font-size: 7rem;
+    font-size: 8rem;
     font-weight: bold;
     text-align: center;  
 }
 
 .banner-text2 {
     position: absolute;
-    top: 448%;
+    top: 490%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .banner-text3 {
     position: absolute;
-    top: 506%;
+    top: 563%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 .banner-text4 {
     position: absolute;
-    top: 567%;
+    top: 635%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
