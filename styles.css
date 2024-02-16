@@ -177,15 +177,15 @@ html {
 
 .factions1, .factions1-logo {
     left: 12%;
-    transform: translate(-24%, -170%);
+    transform: translate(-24%, -10%);
 }
 .factions2, .factions2-logo {
     left: 46%;
-    transform: translate(-20%, -170%);
+    transform: translate(-20%, -10%);
 }
 .factions3, .factions3-logo {
     left: 80%;
-    transform: translate(-16%, -180%);
+    transform: translate(-16%, -10%);
 }
 
 .con1 {
